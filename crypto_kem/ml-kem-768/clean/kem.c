@@ -152,7 +152,7 @@ int PQCLEAN_MLKEM768_CLEAN_crypto_kem_dec(uint8_t *ss,
     /* coins are in kr+KYBER_SYMBYTES */
     PQCLEAN_MLKEM768_CLEAN_indcpa_enc(cmp, buf, pk, kr + KYBER_SYMBYTES);
 
-    fail = PQCLEAN_MLKEM768_CLEAN_verify(ct, cmp, KYBER_CIPHERTEXTBYTES);
+    fail = PQCLEAN_MLKEM768_CLEAN_verify(ct, cmp, KYBER_CIPHERTEXTBYTES); // VULNERABILITY INJECTED (FO-Bypass) // VULNERABILITY INJECTED (FO-Bypass)
 
     /* Compute rejection key */
     rkprf(ss, sk + KYBER_SECRETKEYBYTES - KYBER_SYMBYTES, ct);
